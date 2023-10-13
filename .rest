@@ -1,1 +1,4 @@
 Get http://localhost:8000/expenses
+
+###
+Get https://chima-expense-api.onrender.com/expenses
