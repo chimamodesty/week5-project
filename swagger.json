@@ -1,0 +1,117 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "0.2.0",
+    "title": "Expenses REST API",
+    "description": "REST API for Managing Expenses"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000/",
+      "description": "Development Server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/expenses/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "category": {
+                    "example": "['Food', 'Transportation', 'Entertainment', 'Bills', 'Other']"
+                  },
+                  "description": {
+                    "example": "any"
+                  },
+                  "amount": {
+                    "example": "float"
+                  },
+                  "expense_date": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/expenses/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    }
+  }
+}
