@@ -4,6 +4,7 @@ const cors = require('cors')
 const app = express()
 const swaggerUi = require('swagger-ui-express')
 const swaggerDocument = require('./swagger.json');
+const { ValidationError } = require('./controller/validate')
 
 const mongodb = require('./db/connect')
 
@@ -20,6 +21,30 @@ app
         next()
     })
     .use('/', require('./routes'))
+    .use((req, res, next) => {
+        // handle 404 error
+        const error = new Error('Not Found')
+        error.status = 404
+        next(error)
+    })
+    .use((err, req, res, next) => {
+        // Validation error
+        if(err instanceof ValidationError ) {
+            return res.status(400)
+            .json({
+                "message": err.message,
+                "error": err.validationErrors
+            })
+        }
+        // Handle any other error
+        res.status(err.status || 500)
+        res.send({
+            error: {
+                status: err.status || 500,
+                message: err.message
+            }
+        })
+    })
 
 
 mongodb.initDB((err, mongodb) => {

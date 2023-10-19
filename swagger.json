@@ -54,7 +54,7 @@
                 "type": "object",
                 "properties": {
                   "category": {
-                    "example": "['Food', 'Transportation', 'Entertainment', 'Bills', 'Other']"
+                    "example": "any"
                   },
                   "description": {
                     "example": "any"
