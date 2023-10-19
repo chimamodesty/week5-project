@@ -11,9 +11,9 @@ const doc = {
         url: 'http://localhost:8000/',              // by default: 'http://localhost:3000'
         description: 'Development Server'       // by default: ''
       },
-    //   { url: 'https://cse-341-chima.onrender.com/',
-    //     description: 'Production Server' 
-    //     },
+      { url: 'https://chima-expense-api.onrender.com/',
+        description: 'Production Server' 
+        },
     ],
     tags: [                   // by default: empty Array
       {
