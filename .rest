@@ -6,7 +6,7 @@ GET http://localhost:8000/expenses/652947dd1371ba24067d41c5
 
 
 ###
-POST http://localhost:8000/expenses  HTTP/1.1
+POST http://localhost:8000/expenses/  HTTP/1.1
 Content-Type: application/json
 
 {
@@ -18,12 +18,12 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8000/expenses/652947dd1371ba24067d41c5  HTTP/1.1
+PUT http://localhost:8000/expenses/6531008286998f246f9e4758  HTTP/1.1
 Content-Type: application/json
 
 {
     "description": "Panado for headache",
-    "category": "Bills",
+    "category": "Food",
     "amount": 150,
     "expense_date": "2023-10-21"
 }
@@ -40,5 +40,5 @@ Content-Type: application/json
     "category": "Food",
     "description": "Brocolli ",
     "amount": 21.95,
-    "expense_date": "15/10/23"
+    "expense_date": "2023/10/23"
 }
