@@ -2,8 +2,8 @@
 
 const { google } = require('googleapis')
 
-const cred = require('../credentials.json')
-const redirectURI = 'auth/google'
+//const cred = require('../credentials.json')
+//const redirectURI = 'auth/google'
 // Google OAuth url link
 
 
