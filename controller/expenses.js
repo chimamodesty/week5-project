@@ -12,7 +12,9 @@ const ObjectId = require('mongodb').ObjectId
 //     return avail
 // }
 
-const allExpenses = async (req, res, next)=> {
+const allExpenses = async (req, res, next) => {
+    // const token = req.cookies
+    // console.log(token.token)
     try {
         const result = await mongodb.getDb().db().collection('expenses').find({})
         result.toArray().then(lists => {
@@ -83,10 +85,16 @@ const deleteExpense = async (req, res, next) => {
         
 }
 
+const token = async (req, res, next) => {
+    console.log('cookies: ', req.cookies)
+    res.send('token page')
+}
+
 module.exports = {
     allExpenses,
     expenseById,
     addExpense,
     updateExpense,
-    deleteExpense
+    deleteExpense,
+    token
 }
