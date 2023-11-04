@@ -2,7 +2,7 @@
 const jwt = require('jsonwebtoken')
 const { google } = require('googleapis')
 
-const cred = require('../credentials.json')
+//const cred = require('../credentials.json')
 const redirectURI = 'auth/google'
 // Google OAuth url link
 
